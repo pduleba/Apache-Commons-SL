@@ -1,0 +1,101 @@
+<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/maven-v4_0_0.xsd">
+	<modelVersion>4.0.0</modelVersion>
+	<groupId>com.pduleba</groupId>
+	<artifactId>apache-commons-sl</artifactId>
+	<packaging>jar</packaging>
+	<version>1.0.0-SNAPSHOT</version>
+	<name>Data Reader Project</name>
+	<url>http://maven.apache.org</url>
+
+	<properties>
+		<!-- Application dependencies -->
+		<java.version>1.8</java.version>
+		<junit.version>4.12</junit.version>
+		<lombok.version>1.16.6</lombok.version>
+		<slf4j-log4j12.version>1.7.13</slf4j-log4j12.version>
+
+		<!-- Build dependencies -->
+		<project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
+
+		<!-- Maven dependencies -->
+		<maven-assembly-plugin.version>3.1.0</maven-assembly-plugin.version>
+		<maven-compiler-plugin.version>3.3</maven-compiler-plugin.version>
+		<maven-eclipse-plugin.version>2.10</maven-eclipse-plugin.version>
+	</properties>
+
+	<build>
+		<finalName>data-reader</finalName>
+
+		<plugins>
+			<!-- Jar creation -->
+			<plugin>
+				<groupId>org.apache.maven.plugins</groupId>
+				<artifactId>maven-assembly-plugin</artifactId>
+				<version>${maven-assembly-plugin.version}</version>
+				<configuration>
+					<archive>
+						<manifest>
+							<mainClass>com.pduleba.data.reader.App</mainClass>
+							<addClasspath>true</addClasspath>
+						</manifest>
+					</archive>
+					<descriptorRefs>
+						<descriptorRef>jar-with-dependencies</descriptorRef>
+					</descriptorRefs>
+					<finalName>${project.artifactId}</finalName>
+				</configuration>
+				<executions>
+					<execution>
+						<id>make-assembly</id> <!-- this is used for inheritance merges -->
+						<phase>package</phase> <!-- bind to the packaging phase -->
+						<goals>
+							<goal>single</goal>
+						</goals>
+					</execution>
+				</executions>
+			</plugin>
+
+			<!-- Compiler -->
+			<plugin>
+				<groupId>org.apache.maven.plugins</groupId>
+				<artifactId>maven-compiler-plugin</artifactId>
+				<version>${maven-compiler-plugin.version}</version>
+				<configuration>
+					<source>${java.version}</source>
+					<target>${java.version}</target>
+				</configuration>
+			</plugin>
+
+		</plugins>
+	</build>
+
+	<dependencies>
+
+		<!-- Lombok -->
+		<dependency>
+			<groupId>org.projectlombok</groupId>
+			<artifactId>lombok</artifactId>
+			<version>${lombok.version}</version>
+			<scope>compile</scope>
+		</dependency>
+
+		<!-- slf4j-log4j -->
+		<dependency>
+			<groupId>org.slf4j</groupId>
+			<artifactId>slf4j-log4j12</artifactId>
+			<version>${slf4j-log4j12.version}</version>
+			<scope>compile</scope>
+		</dependency>
+
+		<!-- Unit Test -->
+		<dependency>
+			<groupId>junit</groupId>
+			<artifactId>junit</artifactId>
+			<version>${junit.version}</version>
+			<scope>test</scope>
+		</dependency>
+
+	</dependencies>
+
+</project>
