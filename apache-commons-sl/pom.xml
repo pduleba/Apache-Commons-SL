@@ -15,6 +15,8 @@
 		<lombok.version>1.16.6</lombok.version>
 		<slf4j-log4j12.version>1.7.13</slf4j-log4j12.version>
 
+		<commons-rng.version>1.0</commons-rng.version>
+
 		<!-- Build dependencies -->
 		<project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
 
@@ -60,12 +62,37 @@
 			<scope>compile</scope>
 		</dependency>
 
-		<!-- Unit Test -->
+		<!-- Apache Commons RNG -->
+		<!-- https://commons.apache.org/proper/commons-rng/modules.html -->
 		<dependency>
-			<groupId>junit</groupId>
-			<artifactId>junit</artifactId>
-			<version>${junit.version}</version>
-			<scope>test</scope>
+			<groupId>org.apache.commons</groupId>
+			<artifactId>commons-rng-client-api</artifactId>
+			<version>${commons-rng.version}</version>
+		</dependency>
+		<dependency>
+			<groupId>org.apache.commons</groupId>
+			<artifactId>commons-rng-core</artifactId>
+			<version>${commons-rng.version}</version>
+		</dependency>
+		<dependency>
+			<groupId>org.apache.commons</groupId>
+			<artifactId>commons-rng-simple</artifactId>
+			<version>${commons-rng.version}</version>
+		</dependency>
+		<dependency>
+			<groupId>org.apache.commons</groupId>
+			<artifactId>commons-rng-sampling</artifactId>
+			<version>${commons-rng.version}</version>
+		</dependency>
+		<dependency>
+			<groupId>org.apache.commons</groupId>
+			<artifactId>commons-rng-jmh</artifactId>
+			<version>${commons-rng.version}</version>
+		</dependency>
+		<dependency>
+			<groupId>org.apache.commons</groupId>
+			<artifactId>commons-rng-examples</artifactId>
+			<version>${commons-rng.version}</version>
 		</dependency>
 
 	</dependencies>
