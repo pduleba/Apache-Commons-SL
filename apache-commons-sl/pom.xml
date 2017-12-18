@@ -15,10 +15,13 @@
 		<lombok.version>1.16.6</lombok.version>
 		<slf4j-log4j12.version>1.7.13</slf4j-log4j12.version>
 
+		<commons-rng.version>1.0</commons-rng.version>
+
 		<!-- Build dependencies -->
 		<project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
 
 		<!-- Maven dependencies -->
+		<exec-maven-plugin.version>1.2.1</exec-maven-plugin.version>
 		<maven-assembly-plugin.version>3.1.0</maven-assembly-plugin.version>
 		<maven-compiler-plugin.version>3.3</maven-compiler-plugin.version>
 		<maven-eclipse-plugin.version>2.10</maven-eclipse-plugin.version>
@@ -39,6 +42,22 @@
 				</configuration>
 			</plugin>
 
+			<!-- Run main -->
+			<plugin>
+				<groupId>org.codehaus.mojo</groupId>
+				<artifactId>exec-maven-plugin</artifactId>
+				<version>${exec-maven-plugin.version}</version>
+				<executions>
+					<execution>
+						<goals>
+							<goal>java</goal>
+						</goals>
+					</execution>
+				</executions>
+				<configuration>
+					<mainClass>com.pduleba.apache.commons.sl.rng.RNG</mainClass>
+				</configuration>
+			</plugin>
 		</plugins>
 	</build>
 
@@ -60,13 +79,7 @@
 			<scope>compile</scope>
 		</dependency>
 
-		<!-- Unit Test -->
-		<dependency>
-			<groupId>junit</groupId>
-			<artifactId>junit</artifactId>
-			<version>${junit.version}</version>
-			<scope>test</scope>
-		</dependency>
+		<!-- Apache Commons XXX -->
 
 	</dependencies>
 
