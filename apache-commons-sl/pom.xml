@@ -79,7 +79,13 @@
 			<scope>compile</scope>
 		</dependency>
 
-		<!-- Apache Commons XXX -->
+		<!-- Apache Commons Text -->
+		<!-- https://commons.apache.org/proper/commons-text/userguide.html -->
+		<dependency>
+			<groupId>org.apache.commons</groupId>
+			<artifactId>commons-text</artifactId>
+			<version>1.2</version>
+		</dependency>
 
 	</dependencies>
 
