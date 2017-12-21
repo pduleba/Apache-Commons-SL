@@ -55,7 +55,7 @@
 					</execution>
 				</executions>
 				<configuration>
-					<mainClass>com.pduleba.apache.commons.sl.rng.RNG</mainClass>
+					<mainClass>com.pduleba.apache.commons.sl.Main</mainClass>
 				</configuration>
 			</plugin>
 		</plugins>
@@ -79,7 +79,12 @@
 			<scope>compile</scope>
 		</dependency>
 
-		<!-- Apache Commons XXX -->
+		<!-- Apache Commons Lang3 -->
+		<dependency>
+			<groupId>org.apache.commons</groupId>
+			<artifactId>commons-lang3</artifactId>
+			<version>3.7</version>
+		</dependency>
 
 	</dependencies>
 
